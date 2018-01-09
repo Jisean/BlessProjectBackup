@@ -1,0 +1,602 @@
+___Çì´õ __
+
+
+
+////////////////////////////////////////////////////////////////////////// ¿øº»
+
+
+///*!
+// * \file DynamicCamera.h
+// * \date 2016/02/24 13:32
+// *
+// * \author Administrator
+// * Contact: user@company.com
+// *
+// * \brief 
+// *
+// * TODO: long description
+// *
+// * \note
+//*/
+//
+//#ifndef DynamicCamera_h__
+//#define DynamicCamera_h__
+//
+//#include "Camera.h"
+//#include "Include.h"
+//
+//namespace Engine
+//{
+//	class CTransform;
+//	class CDynamicMesh;
+//}
+//class CMainPlayer;
+//class CDynamicCamera
+//	: public Engine::CCamera
+//{
+//	enum CAMSTATE{ CAM_NORMAL, CAM_FREE, CAM_WYVERN ,CAM_DEFAULT};
+//	enum ACTIONCAM{ ACT_CHARCHANGE };
+//private:
+//	CDynamicCamera(LPDIRECT3DDEVICE9 pDevice);
+//	virtual ~CDynamicCamera(void);
+//
+//public:
+//	HRESULT InitCamera(const D3DXVECTOR3* pEye, const D3DXVECTOR3* pAt);
+//	HRESULT RenewalCamera(void);
+//
+//public:
+//	virtual _int Update(const _float& fTimeDelta);
+//public:
+//	D3DXVECTOR3	GetAt(void){ return m_vAt; }
+//	D3DXVECTOR3 GetEye(void){ return m_vEye; }
+//
+//public:
+//	static CDynamicCamera* Create(LPDIRECT3DDEVICE9 pDevice, const D3DXVECTOR3* pEye, const D3DXVECTOR3* pAt);
+//
+//private:
+//	void KeyCheck(const _float& fTimeDelta);
+//	void FixMouse(void);
+//	void FixControl(void);
+//	void MouseMove(void);
+//	void FixedMouseMove(void);
+//	void NormalCamera(void);
+//	void ActionCamera(const _float& fTimeDelta);
+//	void WyvernCamera_Dynamic(void);
+//	void CameraCollision(void);
+//
+//private:
+//	bitset<1>				m_bActionCamSet;
+//	_float					m_fCamSpeed;
+//	_bool					m_bClick;
+//	_bool					m_bMouseFix;
+//	CAMSTATE				m_eCamState , m_ePrevState;
+//	_float					m_fDistance;
+//	_float					m_fAngle;
+//	D3DXVECTOR3				m_vPreEye;
+//	D3DXVECTOR3				m_vPreAt;
+//	CMainPlayer*			m_pMainPlayer;
+//	Engine::CDynamicMesh*	m_pPlayerMesh;
+//	Engine::CTransform*		m_pPlayerInfo;
+//	_bool					m_bChange;
+//
+//
+//	Engine::CDynamicMesh*	m_pWyvernMesh;
+//	Engine::CTransform*		m_pWyvernInfo;	
+//private:
+//	_bool					m_bLengthStart;
+//	_float					m_fLengthStart;
+//
+//	/////////////////////Get////////////////////////
+//public:
+//	_bool	 Get_MouseFix(void){ return m_bMouseFix; }
+//	CAMSTATE Get_CamState();
+//public:
+//	/////////////////////SET////////////////////////
+//	void	Set_MouseFix(bool bMouseFix);
+//	void	Set_CamState(CAMSTATE eCam);
+//};
+//
+//#endif // DynamicCamera_h__
+
+
+//////////////////////////////////////////////////////////////////////////
+
+
+__½ÃÇÇÇÇ__
+
+
+////¿øº»
+//#include "stdafx.h"
+//#include "DynamicCamera.h"
+//
+//#include "Include.h"
+//#include "Export_Function.h"
+//#include "KeyMgr.h"
+//#include "Stage.h"
+//#include "DynamicMesh.h"
+//#include "Transform.h"
+//#include "MainPlayer.h"
+//#include "Wyvern.h"
+//#include "..\Engine\Resources\Code\StaticMesh.h"
+//
+//CDynamicCamera::CDynamicCamera(LPDIRECT3DDEVICE9 pDevice)
+//: Engine::CCamera(pDevice)
+//, m_fCamSpeed(0.f)
+//, m_bClick(false)
+//, m_bMouseFix(false)
+//, m_eCamState(CAM_NORMAL)
+//, m_pPlayerInfo(NULL)
+//, m_pPlayerMesh(NULL)
+//, m_fDistance(0.f)
+//, m_vPreEye(0.f, 0.f, 0.f)
+//, m_vPreAt(0.f, 0.f, 0.f)
+//, m_bLengthStart(true)
+//, m_fLengthStart(0.f)
+//, m_pMainPlayer(NULL)
+//, m_pWyvernInfo(NULL)
+//, m_pWyvernMesh(NULL)
+//, m_ePrevState(CAM_DEFAULT)
+//, m_bChange(false)
+//{
+//	m_bActionCamSet.reset();
+//}
+//
+//CDynamicCamera::~CDynamicCamera(void)
+//{
+//	
+//}
+//
+//HRESULT CDynamicCamera::InitCamera(const D3DXVECTOR3* pEye, const D3DXVECTOR3* pAt)
+//{
+//	m_fCamSpeed = 50.f;
+//
+//	m_vEye = *pEye;
+//	m_vAt = *pAt;
+//	Invalidate_ViewMatrix();
+//
+//	m_fFovY = D3DXToRadian(45.f);
+//	m_fAspect = float(WINCX) / WINCY;
+//	m_fNear = 0.1f;
+//	m_fFar = 1000.f;
+//	Invalidate_ProjMatrix();
+//
+//	m_fDistance = 3.f;
+//	m_fAngle = -300.f;
+//
+//	
+//
+//	return S_OK;
+//}
+//
+//HRESULT CDynamicCamera::RenewalCamera(void)
+//{
+//	m_bActionCamSet.set(ACT_CHARCHANGE);
+//
+//	m_vPreEye = m_vEye;
+//	m_vPreAt = m_vAt;
+//	m_pPlayerInfo = (Engine::CTransform*)Engine::Get_Component(LAYER_GAMELOGIC, L"Player", L"Transform");
+//	m_pPlayerMesh = (Engine::CDynamicMesh*)Engine::Get_Component(LAYER_GAMELOGIC, L"Player", L"Mesh");
+//
+//	return S_OK;
+//}
+//
+//void CDynamicCamera::KeyCheck(const _float& fTimeDelta)
+//{
+//	float		fTime = fTimeDelta;
+//
+//	if(Engine::GetDIKeyState(DIK_LEFT) & 0x80)
+//	{
+//		D3DXVECTOR3		vRight;
+//		D3DXMATRIX		matCamState;
+//
+//		D3DXMatrixInverse(&matCamState, NULL, &m_matView);
+//		memcpy(&vRight, &matCamState.m[0][0], sizeof(D3DXVECTOR3));
+//		D3DXVec3Normalize(&vRight, &vRight);
+//
+//		m_vEye -= vRight * m_fCamSpeed * fTime;
+//		m_vAt -= vRight * m_fCamSpeed * fTime;
+//	}
+//
+//	if(Engine::GetDIKeyState(DIK_RIGHT) & 0x80)
+//	{
+//		D3DXVECTOR3		vRight;
+//		D3DXMATRIX		matCamState;
+//
+//		D3DXMatrixInverse(&matCamState, NULL, &m_matView);
+//		memcpy(&vRight, &matCamState.m[0][0], sizeof(D3DXVECTOR3));
+//		D3DXVec3Normalize(&vRight, &vRight);
+//
+//		m_vEye += vRight * m_fCamSpeed * fTime;
+//		m_vAt += vRight * m_fCamSpeed * fTime;
+//	}
+//
+//	if(Engine::GetDIKeyState(DIK_UP) & 0x80)
+//	{
+//		D3DXVECTOR3		vLook;
+//		vLook = m_vAt - m_vEye;
+//		D3DXVec3Normalize(&vLook, &vLook);
+//
+//		m_vEye += vLook * m_fCamSpeed * fTime;
+//		m_vAt += vLook * m_fCamSpeed * fTime;
+//	}
+//
+//	if(Engine::GetDIKeyState(DIK_DOWN) & 0x80)
+//	{
+//		D3DXVECTOR3		vLook;
+//		vLook = m_vAt - m_vEye;
+//		D3DXVec3Normalize(&vLook, &vLook);
+//
+//		m_vEye -= vLook * m_fCamSpeed * fTime;
+//		m_vAt -= vLook * m_fCamSpeed * fTime;
+//	}
+//}
+//
+//_int CDynamicCamera::Update(const _float& fTimeDelta)
+//{
+//	if(m_bStart)
+//	{
+//		m_pPlayerInfo = (Engine::CTransform*)Engine::Get_Component(LAYER_GAMELOGIC, L"Player", L"Transform");
+//		m_pPlayerMesh = (Engine::CDynamicMesh*)Engine::Get_Component(LAYER_GAMELOGIC, L"Player", L"Mesh");
+//		m_bStart = false;
+//	}
+//
+//	FixControl();
+//
+//	if(NULL == m_pMainPlayer)
+//	{
+//		m_pMainPlayer = ((CMainPlayer*)Engine::Get_ObjList(LAYER_GAMELOGIC,L"Player")->front());
+//	}
+//
+//	if(NULL != m_pMainPlayer)
+//	{
+//		if(NULL == m_pWyvernMesh || NULL == m_pWyvernInfo)
+//		{
+//			m_pWyvernMesh = m_pMainPlayer->Get_TargetPlayer()->Get_Wyvern()->Get_Mesh();
+//			m_pWyvernInfo = ((Engine::CTransform*)m_pMainPlayer->Get_TargetPlayer()->Get_Wyvern()->GetComponent(L"Transform"));
+//		}
+//		if(m_pMainPlayer->Test_BitSet(CPlayers::ACT_MOUNT))
+//		{
+//			m_eCamState = CAM_WYVERN;
+//
+//			if(m_pMainPlayer->Get_TargetPlayer()->Get_Wyvern()->Get_TrackID() == CWyvern::WY_RUN_JUMP_LOOP)
+//				m_bMouseFix = true;
+//		}
+//		else
+//		{
+//			m_eCamState = CAM_NORMAL;
+//			m_bMouseFix = true;
+//		}
+//		if(CKeyMgr::GetInstance()->GetToggleKey('H'))
+//		{
+//			m_eCamState = CAM_FREE;
+//
+//			if(false == m_bChange)
+//				m_bChange = true;
+//		}
+//		else
+//		{
+//			if(m_ePrevState != CAM_DEFAULT)
+//			{
+//				if(true == m_bChange)
+//				{
+//					m_eCamState = m_ePrevState;
+//					m_ePrevState = CAM_DEFAULT;
+//					m_bChange = false;
+//				}
+//			}
+//		}
+//	}
+//	if(m_bActionCamSet.any())
+//		ActionCamera(fTimeDelta);
+//	else
+//	{
+//		switch(m_eCamState)
+//		{
+//		case CAM_NORMAL:
+//			NormalCamera();
+//			if(m_bMouseFix)
+//			{
+//				FixMouse();
+//				FixedMouseMove();
+//			}
+//			m_ePrevState = m_eCamState;
+//			break;
+//		case CAM_FREE:
+//			KeyCheck(fTimeDelta);
+//			if(m_bMouseFix)
+//			{
+//				FixMouse();
+//				MouseMove();
+//			}
+//			break;
+//		case CAM_WYVERN:
+//			WyvernCamera_Dynamic();
+//			if(m_bMouseFix)
+//			{
+//				FixMouse();
+//				FixedMouseMove();
+//			}
+//			m_ePrevState = m_eCamState;
+//			break;
+//		}
+//	}
+//
+//#ifdef _DEBUG
+//	wchar_t	szEyePos[128] = L"";
+//	wchar_t	szAtPos[128] = L"";
+//	wsprintf(szEyePos, L"EyePos : %d, %d, %d", m_vEye.x, m_vEye.y, m_vEye.z);
+//	wsprintf(szAtPos, L"AtPos : %d, %d, %d", m_vAt.x, m_vAt.y, m_vAt.z);
+//	Engine::Render_Font(L"¸¼Àº°íµñ", _vec3(650.f, 500.f, 0.f), szEyePos, D3DXCOLOR(1.f, 1.f, 1.f, 1.f));
+//	Engine::Render_Font(L"¸¼Àº°íµñ", _vec3(650.f, 550.f, 0.f), szAtPos, D3DXCOLOR(1.f, 1.f, 1.f, 1.f));
+//#endif
+//
+//	return Engine::CCamera::Update(fTimeDelta);
+//}
+//
+//CDynamicCamera* CDynamicCamera::Create(LPDIRECT3DDEVICE9 pDevice, const D3DXVECTOR3* pEye, const D3DXVECTOR3* pAt)
+//{
+//	CDynamicCamera* pCamera = new CDynamicCamera(pDevice);
+//	if(FAILED(pCamera->InitCamera(pEye, pAt)))
+//		Engine::Safe_Release(pCamera);
+//
+//	return pCamera;
+//}
+//
+//void CDynamicCamera::FixMouse(void)
+//{
+//	POINT		ptMouse = {WINCX >> 1, WINCY >> 1};
+//	ClientToScreen(g_hWnd, &ptMouse);
+//	SetCursorPos(ptMouse.x, ptMouse.y);
+//}
+//
+//void CDynamicCamera::MouseMove(void)
+//{
+//	int		iDistance = 0;
+//	if(iDistance = Engine::GetDIMouseMove(Engine::CInput::DIM_X))
+//	{
+//		D3DXMATRIX		matAxis;
+//		D3DXMatrixRotationAxis(&matAxis, &D3DXVECTOR3(0.f, 1.f, 0.f), D3DXToRadian(iDistance / 10.f));
+//
+//		D3DXVECTOR3		vDir;
+//		vDir = m_vAt - m_vEye;
+//		D3DXVec3TransformNormal(&vDir, &vDir, &matAxis);
+//
+//		m_vAt = m_vEye + vDir;
+//	}
+//
+//	if(iDistance = Engine::GetDIMouseMove(Engine::CInput::DIM_Y))
+//	{
+//		D3DXVECTOR3		vRight;
+//		D3DXMATRIX		matCamState;
+//
+//		D3DXMatrixInverse(&matCamState, NULL, &m_matView);
+//		memcpy(&vRight, &matCamState.m[0][0], sizeof(D3DXVECTOR3));
+//		D3DXVec3Normalize(&vRight, &vRight);
+//
+//		D3DXMATRIX		matAxis;
+//		D3DXMatrixRotationAxis(&matAxis, &vRight, D3DXToRadian(iDistance / 10.f));
+//
+//		D3DXVECTOR3		vDir;
+//		vDir = m_vAt - m_vEye;
+//		D3DXVec3TransformNormal(&vDir, &vDir, &matAxis);
+//
+//		m_vAt = m_vEye + vDir;
+//	}
+//}
+//
+//void CDynamicCamera::NormalCamera(void)
+//{
+//	/*D3DXMATRIX matHead = *(m_pPlayerMesh->FindFrame("BN_Head"));
+//
+//	D3DXMATRIX matScale, matTrans, matRotX, matRotY, matRotZ;
+//	D3DXMatrixScaling(&matScale, m_pPlayerInfo->m_vScale.x, m_pPlayerInfo->m_vScale.y, m_pPlayerInfo->m_vScale.z);
+//	D3DXMatrixTranslation(&matTrans, m_pPlayerInfo->m_vPos.x, m_pPlayerInfo->m_vPos.y, m_pPlayerInfo->m_vPos.z);
+//	D3DXMatrixRotationX(&matRotX, m_pPlayerInfo->m_fAngle[Engine::ANGLE_X]);
+//	D3DXMatrixRotationY(&matRotY, m_pPlayerInfo->m_fAngle[Engine::ANGLE_Y]);
+//	D3DXMatrixRotationZ(&matRotZ, m_pPlayerInfo->m_fAngle[Engine::ANGLE_Z]);
+//
+//	matHead *= matScale * matRotX * matRotY * matRotZ * matTrans;*/
+//
+//	m_vEye = m_pPlayerInfo->m_vDir * (-1);
+//	D3DXVec3Normalize(&m_vEye, &m_vEye);
+//
+//	m_vEye *= m_fDistance;
+//
+//	D3DXVECTOR3		vRight;
+//	D3DXMATRIX		matCamState = m_pPlayerInfo->m_matWorld;
+//	memcpy(&vRight, &matCamState.m[2][0], sizeof(float) * 3);
+//
+//	D3DXMATRIX		matAxis;
+//	D3DXMatrixRotationAxis(&matAxis, &vRight, D3DXToRadian(m_fAngle / 10.f));
+//	D3DXVec3TransformNormal(&m_vEye, &m_vEye, &matAxis);
+//
+//	m_vEye += m_pPlayerInfo->m_vPos;
+//	m_vAt = m_pPlayerInfo->m_vPos + m_pPlayerInfo->m_vDir * 2.f;
+//	m_vAt.y += 0.3f;
+//
+//	//memcpy(&m_vAt, &matHead.m[3][0], sizeof(D3DXVECTOR3));
+//}
+//
+//void CDynamicCamera::FixedMouseMove(void)
+//{
+//	_int iDistance = 0;
+//	if(iDistance = Engine::GetDIMouseMove(Engine::CInput::DIM_Z))
+//	{
+//		if(m_fDistance - iDistance / 1000.f > 1.f && m_fDistance - iDistance / 1000.f < 5.5f)
+//			m_fDistance -= iDistance / 1000.f;
+//	}
+//
+//	if(iDistance = Engine::GetDIMouseMove(Engine::CInput::DIM_Y))
+//	{
+//		m_fAngle -= (float)iDistance;
+//
+//		if(m_fAngle > -90)
+//			m_fAngle = -90;
+//
+//		if(m_fAngle < -816)
+//			m_fAngle = -816;
+//
+//	}
+//
+//	iDistance = 0;
+//	if(m_pMainPlayer->Test_BitSet(CPlayers::ACT_MOUNT))
+//	{
+//		if(iDistance = Engine::GetDIMouseMove(Engine::CInput::DIM_X))
+//		{
+//			if(NULL != m_pWyvernInfo)
+//			{
+//				m_pWyvernInfo->m_fAngle[Engine::ANGLE_Y] += D3DXToRadian(iDistance / 10.f);
+//			}
+//		}
+//	}
+//	else
+//	{
+//		if(iDistance = Engine::GetDIMouseMove(Engine::CInput::DIM_X))
+//		{
+//			m_pPlayerInfo->m_fAngle[Engine::ANGLE_Y] += D3DXToRadian(iDistance / 10.f);
+//
+//		}	
+//	}
+//}
+//
+//void CDynamicCamera::FixControl(void)
+//{
+//	if(Engine::GetDIMouseState(Engine::CInput::DIM_RBUTTON) & 0x80)
+//		m_bMouseFix = true;
+//	else
+//		m_bMouseFix = false;
+//}
+//
+//void CDynamicCamera::ActionCamera(const _float& fTimeDelta)
+//{
+//	if(m_bActionCamSet.test(ACT_CHARCHANGE))
+//	{
+//		D3DXMATRIX matHead = *(m_pPlayerMesh->FindFrame("BN_Head"));
+//
+//		D3DXMATRIX matScale, matTrans, matRotX, matRotY, matRotZ;
+//		D3DXMatrixScaling(&matScale, m_pPlayerInfo->m_vScale.x, m_pPlayerInfo->m_vScale.y, m_pPlayerInfo->m_vScale.z);
+//		D3DXMatrixTranslation(&matTrans, m_pPlayerInfo->m_vPos.x, m_pPlayerInfo->m_vPos.y, m_pPlayerInfo->m_vPos.z);
+//		D3DXMatrixRotationX(&matRotX, m_pPlayerInfo->m_fAngle[Engine::ANGLE_X]);
+//		D3DXMatrixRotationY(&matRotY, m_pPlayerInfo->m_fAngle[Engine::ANGLE_Y]);
+//		D3DXMatrixRotationZ(&matRotZ, m_pPlayerInfo->m_fAngle[Engine::ANGLE_Z]);
+//
+//		matHead *= matScale * matRotX * matRotY * matRotZ * matTrans;
+//
+//		_myvec vEye = _myvec(0.f, 0.f, 0.f);
+//		_myvec vAt = _myvec(0.f, 0.f, 0.f);
+//		vEye = m_pPlayerInfo->m_vDir * (-1);
+//		vEye.Normalize();
+//		vEye *= m_fDistance;
+//
+//		D3DXVECTOR3		vRight;
+//		D3DXMATRIX		matCamState = m_pPlayerInfo->m_matWorld;
+//		memcpy(&vRight, &matCamState.m[2][0], sizeof(float) * 3);
+//
+//		D3DXMATRIX		matAxis;
+//		D3DXMatrixRotationAxis(&matAxis, &vRight, D3DXToRadian(m_fAngle / 10.f));
+//		vEye.TransformNormal(&vEye, &matAxis);
+//
+//		vEye += m_pPlayerInfo->m_vPos;
+//
+//		memcpy(&vAt, &matHead.m[3][0], sizeof(D3DXVECTOR3));
+//
+//		_myvec vEyeLen = _myvec(0.f, 0.f, 0.f);
+//		_myvec vAtLen = _myvec(0.f, 0.f, 0.f);
+//		vEyeLen = vEye - m_vPreEye;
+//		vAtLen	= vAt - m_vPreAt;
+//
+//		_myvec vMoveLen = m_vEye - vEye;
+//		_float fMoveLen = vMoveLen.Length();
+//
+//		m_vEye += vEyeLen * fTimeDelta;
+//		m_vAt += vAtLen * fTimeDelta;
+//
+//		if(m_bLengthStart)
+//		{
+//			m_fLengthStart = fMoveLen * 0.1f;
+//			m_bLengthStart = false;
+//		}
+//		if(fMoveLen < 3.f	/*m_fLengthStart*/)
+//		{
+//			m_bLengthStart = true;
+//			m_bActionCamSet.reset(ACT_CHARCHANGE);
+//		}
+//	}
+//}
+//
+//void CDynamicCamera::WyvernCamera_Dynamic(void)
+//{
+//	D3DXMATRIX matHead; //= *(m_pWyvernMesh->FindFrame("Bip01-Neck1"));
+//
+//	D3DXMatrixIdentity(&matHead);
+//	D3DXMATRIX matScale, matTrans, matRotX, matRotY, matRotZ;
+//	D3DXMatrixScaling(&matScale, m_pWyvernInfo->m_vScale.x, m_pWyvernInfo->m_vScale.y, m_pWyvernInfo->m_vScale.z);
+//	D3DXMatrixTranslation(&matTrans, m_pWyvernInfo->m_vPos.x, m_pWyvernInfo->m_vPos.y, m_pWyvernInfo->m_vPos.z);
+//	D3DXMatrixRotationX(&matRotX, m_pWyvernInfo->m_fAngle[Engine::ANGLE_X]);
+//	D3DXMatrixRotationY(&matRotY, m_pWyvernInfo->m_fAngle[Engine::ANGLE_Y]);
+//	D3DXMatrixRotationZ(&matRotZ, m_pWyvernInfo->m_fAngle[Engine::ANGLE_Z]);
+//
+//	matHead = matScale * matRotX * matRotY * matRotZ * matTrans;
+//
+//	m_vEye = m_pWyvernInfo->m_vDir * (-1);
+//
+//	D3DXVec3Normalize(&m_vEye, &m_vEye);
+//
+//	m_vEye *= m_fDistance;
+//
+//	D3DXVECTOR3		vRight;
+//	D3DXMATRIX		matCamState = m_pWyvernInfo->m_matWorld;
+//	memcpy(&vRight, &matCamState.m[2][0], sizeof(float) * 3);
+//
+//	D3DXMATRIX		matAxis;
+//	D3DXMatrixRotationAxis(&matAxis, &vRight, D3DXToRadian(m_fAngle / 10.f));
+//	D3DXVec3TransformNormal(&m_vEye, &m_vEye, &matAxis);
+//
+//	m_vEye += m_pWyvernInfo->m_vPos;
+//	//m_vEye.y += 1.5f;
+//
+//	m_vAt = m_pWyvernInfo->m_vPos + m_pWyvernInfo->m_vDir * 2.f;
+//	m_vAt.y += 1.f;
+//
+//	//memcpy(&m_vAt, &matHead.m[3][0], sizeof(D3DXVECTOR3));
+//}
+//
+//void CDynamicCamera::Set_CamState(CAMSTATE eCam)
+//{
+//	m_eCamState = eCam;
+//}
+//
+//CDynamicCamera::CAMSTATE CDynamicCamera::Get_CamState()
+//{
+//	return m_eCamState;
+//}
+//
+//void CDynamicCamera::Set_MouseFix(bool bMouseFix)
+//{
+//	m_bMouseFix = bMouseFix;
+//}
+//
+//void CDynamicCamera::CameraCollision(void)
+//{
+//	Engine::CScene* pScene = Engine::Get_Scene();
+//
+//	if(pScene == NULL)
+//		return;
+//
+//	D3DXVECTOR3 vRayPos, vRayDir;
+//
+//	vRayPos = m_vAt;
+//
+//	vRayDir	= m_vEye - m_vAt;
+//	D3DXVec3Normalize(&vRayDir, &vRayDir);
+//	vRayDir.y = 0.f;
+//	BOOL	bHit = FALSE;
+//	float	fu, fv, fDis; 
+//	DWORD  dwIndex;
+//
+//	//LPDIRECT3DVERTEXBUFFER9 pVB = NULL;
+//	//LPDIRECT3DINDEXBUFFER9 pIB = NULL;
+//	D3DXVECTOR3 vOut;
+//	//D3DXMATRIX matIdentity;
+//	//D3DXMatrixIdentity(&matIdentity);
+//	_mymat		matWorldInv;

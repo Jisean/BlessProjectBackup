@@ -1,0 +1,805 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 한국어 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+#ifdef _WIN32
+LANGUAGE LANG_KOREAN, SUBLANG_DEFAULT
+#pragma code_page(949)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)\r\n"
+    "LANGUAGE 18, 1\r\n"
+    "#pragma code_page(949)\r\n"
+    "#include ""res\\MapObjTool.rc2""  // Microsoft Visual C++ 이외의 다른 도구에서 편집한 리소스입니다.\r\n"
+    "#include ""l.KOR\\afxres.rc""          // 표준 구성 요소입니다.\r\n"
+    "#include ""l.KOR\\afxprint.rc""        // 인쇄 미리 보기 리소스\r\n"
+    "#if !defined(_AFXDLL)\r\n"
+    "#include ""l.KOR\\afxribbon.rc""               // MFC 리본 및 컨트롤 막대 리소스\r\n"
+    "#endif\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\MapObjTool.ico"
+IDR_MapObjToolTYPE      ICON                    "res\\MapObjToolDoc.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+IDR_MAINFRAME_256       BITMAP                  "res\\Toolbar256.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  16, 16
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+END
+
+IDR_MAINFRAME_256 TOOLBAR  16, 16
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "파일(&F)"
+    BEGIN
+        MENUITEM "새로 만들기(&N)\tCtrl+N",          ID_FILE_NEW
+        MENUITEM "열기(&O)...\tCtrl+O",           ID_FILE_OPEN
+        MENUITEM "저장(&S)\tCtrl+S",              ID_FILE_SAVE
+        MENUITEM "다른 이름으로 저장(&A)...",           ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "인쇄(&P)...\tCtrl+P",           ID_FILE_PRINT
+        MENUITEM "인쇄 미리 보기(&V)",                ID_FILE_PRINT_PREVIEW
+        MENUITEM "인쇄 설정(&R)...",                ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "최근에 사용한 파일",                  ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "끝내기(&X)",                     ID_APP_EXIT
+    END
+    POPUP "편집(&E)"
+    BEGIN
+        MENUITEM "실행 취소(&U)\tCtrl+Z",           ID_EDIT_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "잘라내기(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "복사(&C)\tCtrl+C",              ID_EDIT_COPY
+        MENUITEM "붙여넣기(&P)\tCtrl+V",            ID_EDIT_PASTE
+    END
+    POPUP "보기(&V)"
+    BEGIN
+        POPUP "도구 모음 및 도킹 창(&T)"
+        BEGIN
+            MENUITEM "<자리 표시자>",                    ID_VIEW_TOOLBAR
+        END
+        MENUITEM "상태 표시줄(&S)",                  ID_VIEW_STATUS_BAR
+        POPUP "응용 프로그램 모양(&A)"
+        BEGIN
+            MENUITEM "Windows 2000(&2)",            ID_VIEW_APPLOOK_WIN_2000
+            MENUITEM "Office XP(&X)",               ID_VIEW_APPLOOK_OFF_XP
+            MENUITEM "Windows XP(&W)",              ID_VIEW_APPLOOK_WIN_XP
+            MENUITEM "Office 2003(&3)",             ID_VIEW_APPLOOK_OFF_2003
+            MENUITEM "Visual Studio.NET 2005(&5)",  ID_VIEW_APPLOOK_VS_2005
+            POPUP "Office 2007(&7)"
+            BEGIN
+                MENUITEM "파랑 스타일(&B)",                  ID_VIEW_APPLOOK_OFF_2007_BLUE
+                MENUITEM "검정 스타일(&L)",                  ID_VIEW_APPLOOK_OFF_2007_BLACK
+                MENUITEM "은색 스타일(&S)",                  ID_VIEW_APPLOOK_OFF_2007_SILVER
+                MENUITEM "바다색 스타일(&A)",                 ID_VIEW_APPLOOK_OFF_2007_AQUA
+            END
+        END
+    END
+    POPUP "도움말(&H)"
+    BEGIN
+        MENUITEM "MapObjTool 정보(&A)...",        ID_APP_ABOUT
+    END
+END
+
+IDR_POPUP_EDIT MENU 
+BEGIN
+    POPUP "편집"
+    BEGIN
+        MENUITEM "잘라내기(&T)\tCtrl+X",            ID_EDIT_CUT
+        MENUITEM "복사(&C)\tCtrl+C",              ID_EDIT_COPY
+        MENUITEM "붙여넣기(&P)\tCtrl+V",            ID_EDIT_PASTE
+    END
+END
+
+IDR_THEME_MENU MENU 
+BEGIN
+    MENUITEM "Office 2007(파랑 스타일)(&B)",     ID_VIEW_APPLOOK_OFF_2007_BLUE
+    MENUITEM "Office 2007(검정 스타일)(&L)",     ID_VIEW_APPLOOK_OFF_2007_BLACK
+    MENUITEM "Office 2007(은색 스타일)(&S)",     ID_VIEW_APPLOOK_OFF_2007_SILVER
+    MENUITEM "Office 2007(바다색 스타일)(&A)",    ID_VIEW_APPLOOK_OFF_2007_AQUA
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY 
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "MapObjTool 정보"
+FONT 9, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    LTEXT           "MapObjTool, 버전 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2016",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "확인",IDOK,113,41,50,14,WS_GROUP
+END
+
+IDD_MYFORM DIALOGEX 0, 0, 294, 338
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_TAB1,"SysTabControl32",0x0,7,7,280,324
+END
+
+IDD_MAPTOOL DIALOGEX 0, 0, 246, 260
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Terrain Vertex",IDC_STATIC,7,7,237,36,BS_CENTER
+    EDITTEXT        IDC_EDIT1,7,23,32,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,50,23,32,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,94,23,32,14,ES_AUTOHSCROLL
+    LTEXT           "X",IDC_STATIC,21,15,8,8
+    PUSHBUTTON      "Create",IDC_BUTTON1,189,22,51,14
+    LTEXT           "Z",IDC_STATIC,63,14,8,8
+    LTEXT           "Interval",IDC_STATIC,98,14,24,8
+    GROUPBOX        "Vertex Height",IDC_STATIC,6,42,237,97
+    CONTROL         "Idle",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,12,62,27,10
+    CONTROL         "Edit",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,39,62,28,10
+    GROUPBOX        "Mode",IDC_STATIC,10,50,60,28
+    GROUPBOX        "Hard Height Mode",IDC_STATIC,145,50,97,28
+    CONTROL         "Low",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON | WS_GROUP,149,63,25,10
+    CONTROL         "High",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,175,63,22,10
+    CONTROL         "Standard",IDC_RADIO5,"Button",BS_AUTORADIOBUTTON,200,63,44,10
+    GROUPBOX        "Hard Slope Mode(Low/High)",IDC_STATIC,145,76,96,31
+    CONTROL         "None",IDC_RADIO6,"Button",BS_AUTORADIOBUTTON | WS_GROUP,148,87,25,10
+    CONTROL         "Gentle",IDC_RADIO7,"Button",BS_AUTORADIOBUTTON,176,87,32,10
+    CONTROL         "Steep",IDC_RADIO8,"Button",BS_AUTORADIOBUTTON,208,87,31,10
+    EDITTEXT        IDC_EDIT4,13,89,25,14,ES_AUTOHSCROLL
+    LTEXT           "Range",IDC_STATIC,16,79,20,8
+    GROUPBOX        "Texture",IDC_STATIC,7,141,239,82,BS_CENTER
+    LISTBOX         IDC_LIST1,15,153,229,49,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Load Texture",IDC_BUTTON2,15,204,229,14
+    PUSHBUTTON      "Save",IDC_BUTTON4,138,226,50,14
+    PUSHBUTTON      "Load",IDC_BUTTON5,196,226,50,14
+    EDITTEXT        IDC_EDIT5,139,23,32,14,ES_AUTOHSCROLL
+    LTEXT           "UV Cnt",IDC_STATIC,144,14,23,8
+    EDITTEXT        IDC_EDIT6,42,89,25,14,ES_AUTOHSCROLL
+    LTEXT           "Height",IDC_STATIC,44,79,22,8
+    CONTROL         "WireFrame",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,82,88,49,10
+    EDITTEXT        IDC_EDIT7,24,119,25,14,ES_AUTOHSCROLL
+    LTEXT           "Smooth Power",IDC_STATIC,13,110,48,8
+    GROUPBOX        "Soft Mode",IDC_STATIC,71,108,76,31
+    CONTROL         "Hard",IDC_RADIO10,"Button",BS_AUTORADIOBUTTON | WS_GROUP,78,62,25,10
+    GROUPBOX        "Height Mode",IDC_STATIC,75,50,60,28
+    CONTROL         "Soft",IDC_RADIO11,"Button",BS_AUTORADIOBUTTON,108,62,24,10
+    CONTROL         "Normal",IDC_RADIO12,"Button",BS_AUTORADIOBUTTON | WS_GROUP,74,121,36,10
+    CONTROL         "Smooth",IDC_RADIO13,"Button",BS_AUTORADIOBUTTON,109,121,36,10
+    GROUPBOX        "Smooth UpDown",IDC_STATIC,145,108,96,31
+    CONTROL         "Up",IDC_RADIO14,"Button",BS_AUTORADIOBUTTON | WS_GROUP,153,121,25,10
+    CONTROL         "Down",IDC_RADIO15,"Button",BS_AUTORADIOBUTTON,187,121,34,10
+END
+
+IDD_OBJECTTOOL DIALOGEX 0, 0, 269, 269
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LISTBOX         IDC_LIST1,9,19,152,59,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    LISTBOX         IDC_LIST2,172,19,90,59,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Reset",IDC_BUTTON1,61,8,26,10
+    PUSHBUTTON      "Reset",IDC_BUTTON2,228,8,26,10
+    GROUPBOX        "Mode",IDC_STATIC,84,77,66,33,BS_CENTER
+    CONTROL         "Idle",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,88,86,23,10
+    CONTROL         "Create",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,112,86,32,10
+    CONTROL         "Edit",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,88,97,23,10
+    CONTROL         "Delete",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,112,97,33,10
+    PUSHBUTTON      "InfoReset",IDC_BUTTON3,205,81,52,14
+    PUSHBUTTON      "InfoEdit",IDC_BUTTON4,205,100,52,14
+    GROUPBOX        "Info State",IDC_STATIC,7,114,255,105,BS_CENTER
+    EDITTEXT        IDC_EDIT1,45,158,56,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,121,158,56,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,195,158,56,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,45,178,47,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,121,178,47,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,195,178,47,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT7,45,197,47,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,121,197,47,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT9,195,197,47,14,ES_AUTOHSCROLL
+    LTEXT           "X",IDC_STATIC,67,148,8,8
+    LTEXT           "Y",IDC_STATIC,144,148,8,8
+    LTEXT           "Z",IDC_STATIC,219,148,8,8
+    LTEXT           "Scale",IDC_STATIC,20,160,17,8
+    LTEXT           "Rotation",IDC_STATIC,12,180,27,8
+    LTEXT           "Position",IDC_STATIC,14,199,25,8
+    PUSHBUTTON      "Save",IDC_BUTTON5,153,244,50,14
+    PUSHBUTTON      "Load",IDC_BUTTON6,212,244,50,14
+    GROUPBOX        "Area(Static Only)",IDC_STATIC,11,81,72,27,BS_CENTER
+    CONTROL         "Dungeon",IDC_RADIO5,"Button",BS_AUTORADIOBUTTON | WS_GROUP,14,91,37,10
+    CONTROL         "City",IDC_RADIO6,"Button",BS_AUTORADIOBUTTON,57,91,24,10
+    CONTROL         "Static",IDC_RADIO10,"Button",BS_AUTORADIOBUTTON | WS_GROUP,158,86,34,10
+    CONTROL         "Dynamic",IDC_RADIO11,"Button",BS_AUTORADIOBUTTON,157,97,42,10
+    GROUPBOX        "Type",IDC_STATIC,154,77,49,33,BS_CENTER
+    LTEXT           "Static",IDC_STATIC,14,8,19,8
+    LTEXT           "Dynamic",IDC_STATIC,174,8,27,8
+    PUSHBUTTON      "Load",IDC_BUTTON9,35,8,26,10
+    PUSHBUTTON      "Load",IDC_BUTTON10,201,8,26,10
+    CONTROL         "",IDC_SPIN1,"msctls_updown32",UDS_ARROWKEYS,93,178,10,14
+    CONTROL         "",IDC_SPIN2,"msctls_updown32",UDS_ARROWKEYS,169,178,10,14
+    CONTROL         "",IDC_SPIN3,"msctls_updown32",UDS_ARROWKEYS,243,178,10,14
+    CONTROL         "",IDC_SPIN4,"msctls_updown32",UDS_ARROWKEYS,93,197,10,14
+    CONTROL         "",IDC_SPIN5,"msctls_updown32",UDS_ARROWKEYS,169,197,10,14
+    CONTROL         "",IDC_SPIN6,"msctls_updown32",UDS_ARROWKEYS,243,197,10,14
+    GROUPBOX        "Decimal for Pos",IDC_STATIC,7,217,255,24
+    CONTROL         "1.0",IDC_RADIO12,"Button",BS_AUTORADIOBUTTON | WS_GROUP,17,227,23,10
+    CONTROL         "0.1",IDC_RADIO13,"Button",BS_AUTORADIOBUTTON,53,227,20,10
+    CONTROL         "0.01",IDC_RADIO14,"Button",BS_AUTORADIOBUTTON,85,227,23,10
+    CONTROL         "0.001",IDC_RADIO15,"Button",BS_AUTORADIOBUTTON,121,227,30,10
+    CONTROL         "0.0001",IDC_RADIO16,"Button",BS_AUTORADIOBUTTON,166,227,32,10
+    CONTROL         "0.00001",IDC_RADIO17,"Button",BS_AUTORADIOBUTTON,214,227,42,10
+    EDITTEXT        IDC_EDIT10,86,129,165,14,ES_AUTOHSCROLL | WS_DISABLED
+    LTEXT           "CurentMesh",IDC_STATIC,159,120,38,8
+    CONTROL         "WireFrame",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,119,49,10
+    CONTROL         "Potential Collision",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,128,64,10
+    CONTROL         "Collision Disvisable",IDC_CHECK3,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,137,70,10
+END
+
+IDD_NAVIMESHTOOL DIALOGEX 0, 0, 262, 295
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "NaviCell Cnt.",IDC_STATIC,7,7,46,29
+    EDITTEXT        IDC_EDIT1,10,17,40,14,ES_AUTOHSCROLL | ES_READONLY
+    GROUPBOX        "Mode",IDC_STATIC,140,7,115,26,BS_CENTER
+    CONTROL         "Idle",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,143,16,23,10
+    CONTROL         "Create",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,166,16,30,10
+    CONTROL         "Edit",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,200,16,21,10
+    GROUPBOX        "Create Mode",IDC_STATIC,130,38,125,29,BS_CENTER
+    CONTROL         "Delete",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,224,16,29,10
+    CONTROL         "3Point",IDC_RADIO5,"Button",BS_AUTORADIOBUTTON | WS_GROUP,135,49,28,10
+    CONTROL         "1Point(Need 1 NaviCell)",IDC_RADIO6,"Button",BS_AUTORADIOBUTTON,166,49,86,10
+    CONTROL         "Delete Vtx",IDC_RADIO7,"Button",BS_AUTORADIOBUTTON | WS_GROUP,151,74,46,10
+    CONTROL         "Delete Cell",IDC_RADIO8,"Button",BS_AUTORADIOBUTTON,202,75,49,10
+    GROUPBOX        "Pick State",IDC_STATIC,7,94,248,41,BS_CENTER
+    EDITTEXT        IDC_EDIT2,22,113,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,76,113,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,128,113,40,14,ES_AUTOHSCROLL
+    LTEXT           "X",IDC_STATIC,13,115,8,8
+    LTEXT           "Y",IDC_STATIC,68,116,8,8
+    LTEXT           "Z",IDC_STATIC,120,116,8,8
+    GROUPBOX        "Selected Cell State",IDC_STATIC,7,168,248,75,BS_CENTER
+    EDITTEXT        IDC_EDIT5,39,185,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,94,185,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT7,150,185,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,39,204,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT9,94,204,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT10,150,204,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT11,39,221,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT12,94,221,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT13,150,221,40,14,ES_AUTOHSCROLL
+    LTEXT           "X",IDC_STATIC,51,177,8,8
+    LTEXT           "Y",IDC_STATIC,110,176,8,8
+    LTEXT           "Z",IDC_STATIC,168,176,8,8
+    LTEXT           "Point A",IDC_STATIC,7,188,24,8
+    LTEXT           "Point B",IDC_STATIC,7,206,23,8
+    LTEXT           "Point C",IDC_STATIC,7,225,23,8
+    PUSHBUTTON      "Save",IDC_BUTTON1,149,274,50,14
+    PUSHBUTTON      "Load",IDC_BUTTON2,205,274,50,14
+    GROUPBOX        "Delete Mode",IDC_STATIC,123,66,132,28,BS_CENTER
+    GROUPBOX        "Picking",IDC_STATIC,7,38,65,28,BS_CENTER
+    CONTROL         "Terrain",IDC_RADIO9,"Button",BS_AUTORADIOBUTTON | WS_GROUP,11,49,31,10
+    CONTROL         "Mesh",IDC_RADIO10,"Button",BS_AUTORADIOBUTTON,44,49,32,10
+    GROUPBOX        "Edit Mode",IDC_STATIC,73,38,55,28,BS_CENTER
+    CONTROL         "Pick",IDC_RADIO11,"Button",BS_AUTORADIOBUTTON | WS_GROUP,75,50,22,10
+    CONTROL         "Input",IDC_RADIO12,"Button",BS_AUTORADIOBUTTON,98,50,27,10
+    CONTROL         "",IDC_SPIN1,"msctls_updown32",UDS_ARROWKEYS,79,185,10,14
+    CONTROL         "",IDC_SPIN2,"msctls_updown32",UDS_ARROWKEYS,134,185,10,14
+    CONTROL         "",IDC_SPIN3,"msctls_updown32",UDS_ARROWKEYS,191,185,10,14
+    CONTROL         "",IDC_SPIN4,"msctls_updown32",UDS_ARROWKEYS,79,204,10,14
+    CONTROL         "",IDC_SPIN5,"msctls_updown32",UDS_ARROWKEYS,134,204,10,14
+    CONTROL         "",IDC_SPIN6,"msctls_updown32",UDS_ARROWKEYS,191,204,10,14
+    CONTROL         "",IDC_SPIN7,"msctls_updown32",UDS_ARROWKEYS,79,221,10,14
+    CONTROL         "",IDC_SPIN8,"msctls_updown32",UDS_ARROWKEYS,134,221,10,14
+    CONTROL         "",IDC_SPIN9,"msctls_updown32",UDS_ARROWKEYS,191,221,10,14
+    GROUPBOX        "Decimal for Pos",IDC_STATIC,7,241,248,29,BS_CENTER
+    CONTROL         "1.0",IDC_RADIO13,"Button",BS_AUTORADIOBUTTON | WS_GROUP,7,252,23,10
+    CONTROL         "0.1",IDC_RADIO14,"Button",BS_AUTORADIOBUTTON,34,252,19,10
+    CONTROL         "0.01",IDC_RADIO15,"Button",BS_AUTORADIOBUTTON,63,252,22,10
+    CONTROL         "0.001",IDC_RADIO16,"Button",BS_AUTORADIOBUTTON,99,252,28,10
+    CONTROL         "0.0001",IDC_RADIO17,"Button",BS_AUTORADIOBUTTON,149,252,32,10
+    CONTROL         "0.00001",IDC_RADIO18,"Button",BS_AUTORADIOBUTTON,202,252,35,10
+    EDITTEXT        IDC_EDIT14,195,114,44,14,ES_AUTOHSCROLL
+    LTEXT           "Near Range",IDC_STATIC,199,102,37,8
+    CONTROL         "Terrain",IDC_CHECK1,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,58,18,31,10
+    GROUPBOX        "Cell Type",IDC_STATIC,7,66,110,28,BS_CENTER
+    CONTROL         "Terrain",IDC_RADIO19,"Button",BS_AUTORADIOBUTTON | WS_GROUP,8,75,31,10
+    CONTROL         "Cell",IDC_RADIO20,"Button",BS_AUTORADIOBUTTON,50,75,22,10
+    CONTROL         "Mesh",IDC_RADIO21,"Button",BS_AUTORADIOBUTTON,83,75,25,10
+    GROUPBOX        "WireFrame",IDC_STATIC,56,7,80,26
+    CONTROL         "Object",IDC_CHECK2,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,96,18,37,10
+    GROUPBOX        "Point Swap (Only Input Edit)",IDC_STATIC,7,134,248,32,BS_CENTER
+    CONTROL         "A<->B",IDC_RADIO22,"Button",BS_AUTORADIOBUTTON | WS_GROUP,18,148,37,10
+    CONTROL         "B<->C",IDC_RADIO23,"Button",BS_AUTORADIOBUTTON,67,148,37,10
+    CONTROL         "A<->C",IDC_RADIO24,"Button",BS_AUTORADIOBUTTON,115,148,37,10
+    PUSHBUTTON      "Swap",IDC_BUTTON3,172,145,50,14
+    PUSHBUTTON      "Edit",IDC_BUTTON4,203,173,50,14
+END
+
+IDD_SPLATINGTOOL DIALOGEX 0, 0, 175, 236
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_IMAGE,"Static",SS_BITMAP | SS_CENTERIMAGE | WS_BORDER,13,16,63,61,WS_EX_CLIENTEDGE
+    LISTBOX         IDC_LIST1,94,17,62,62,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Tile Image",IDC_STATIC,8,7,71,75
+    GROUPBOX        "Tile List",IDC_STATIC,87,7,81,76
+    PUSHBUTTON      "EraseSplating",IDC_BUTTON2,87,86,78,14,WS_DISABLED
+    GROUPBOX        "Mode",IDC_STATIC,92,138,69,38
+    CONTROL         "Idle",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,95,146,21,10
+    CONTROL         "Draw",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,130,146,27,10
+    CONTROL         "Erase",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON | WS_DISABLED,112,161,29,10
+    PUSHBUTTON      "Save",IDC_BUTTON3,109,179,50,14,WS_DISABLED
+    EDITTEXT        IDC_EDIT1,120,104,40,14,ES_AUTOHSCROLL
+    LTEXT           "BrushSize",IDC_STATIC,85,106,30,8
+    EDITTEXT        IDC_EDIT2,120,122,40,14,ES_AUTOHSCROLL
+    LTEXT           "AlphaRadius",IDC_STATIC,81,124,38,8
+    PUSHBUTTON      "Reset All",IDC_BUTTON5,14,179,63,14,WS_DISABLED
+    PUSHBUTTON      "Temporary Save",IDC_BUTTON6,15,87,63,14,WS_DISABLED
+    LTEXT           "TIP: If draw square. \nSet AlphaRadius more then BrushSize",IDC_STATIC,15,202,126,21
+END
+
+IDD_PATHFIND DIALOGEX 0, 0, 189, 276
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LISTBOX         IDC_LIST1,7,23,175,89,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP,WS_EX_ACCEPTFILES
+    LTEXT           "StaticPath",IDC_STATIC,14,12,33,8
+    PUSHBUTTON      "StaticSave",IDC_BUTTON1,7,113,175,14
+    LISTBOX         IDC_LIST2,7,140,175,89,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP,WS_EX_ACCEPTFILES
+    LTEXT           "DynamicPath",IDC_STATIC,14,130,41,8
+    PUSHBUTTON      "DynamicSave",IDC_BUTTON2,7,233,175,14
+END
+
+IDD_OCCLUSION DIALOGEX 0, 0, 250, 269
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Create",IDC_BUTTON1,25,59,50,14
+    PUSHBUTTON      "Copy",IDC_BUTTON8,25,75,50,14
+    PUSHBUTTON      "Delete",IDC_BUTTON9,189,11,50,14
+    LISTBOX         IDC_LIST1,145,27,95,70,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT1,49,146,50,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT2,118,146,50,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT3,189,146,50,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT4,49,171,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT5,118,171,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT6,186,171,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT7,49,197,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT8,118,197,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT9,186,197,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT10,92,57,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT11,92,90,40,14,ES_AUTOHSCROLL
+    CONTROL         "Idle",IDC_RADIO1,"Button",BS_AUTORADIOBUTTON | WS_GROUP,19,27,22,10
+    CONTROL         "Create",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,42,27,30,10
+    CONTROL         "Edit",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,74,27,20,10
+    CONTROL         "Delete",IDC_RADIO4,"Button",BS_AUTORADIOBUTTON,98,27,30,10
+    CONTROL         "1.0",IDC_RADIO5,"Button",BS_AUTORADIOBUTTON | WS_GROUP,26,232,26,10
+    CONTROL         "0.1",IDC_RADIO19,"Button",BS_AUTORADIOBUTTON,75,232,34,10
+    CONTROL         "0.01",IDC_RADIO20,"Button",BS_AUTORADIOBUTTON,120,232,30,10
+    CONTROL         "0.001",IDC_RADIO21,"Button",BS_AUTORADIOBUTTON,173,232,34,10
+    PUSHBUTTON      "Edit",IDC_BUTTON11,140,108,50,14
+    PUSHBUTTON      "Redo",IDC_BUTTON12,193,108,50,14
+    CONTROL         "",IDC_SPIN1,"msctls_updown32",UDS_ARROWKEYS,89,171,10,14
+    CONTROL         "",IDC_SPIN2,"msctls_updown32",UDS_ARROWKEYS,159,171,10,14
+    CONTROL         "",IDC_SPIN3,"msctls_updown32",UDS_ARROWKEYS,227,171,10,14
+    CONTROL         "",IDC_SPIN4,"msctls_updown32",UDS_ARROWKEYS,89,197,10,14
+    CONTROL         "",IDC_SPIN5,"msctls_updown32",UDS_ARROWKEYS,159,197,10,14
+    CONTROL         "",IDC_SPIN6,"msctls_updown32",UDS_ARROWKEYS,227,197,10,14
+    PUSHBUTTON      "Load",IDC_BUTTON6,191,248,50,14
+    PUSHBUTTON      "Save",IDC_BUTTON5,135,248,50,14
+    LTEXT           "BoxList",IDC_STATIC,150,15,23,8
+    GROUPBOX        "Mode",IDC_STATIC,15,17,123,26,BS_CENTER
+    GROUPBOX        "BoxCount",IDC_STATIC,88,46,48,30,BS_CENTER
+    GROUPBOX        "Create",IDC_STATIC,19,49,62,43,BS_CENTER
+    GROUPBOX        "Edit",IDC_STATIC,138,98,107,30,BS_CENTER
+    GROUPBOX        "Angle With Cam",IDC_STATIC,84,79,55,29,BS_CENTER
+    GROUPBOX        "Info State",IDC_STATIC,7,128,236,91,BS_CENTER
+    LTEXT           "Scale",IDC_STATIC,18,149,17,8
+    LTEXT           "Rotation",IDC_STATIC,13,175,27,8
+    LTEXT           "Position",IDC_STATIC,13,199,25,8
+    LTEXT           "X",IDC_STATIC,69,136,8,8
+    LTEXT           "Y",IDC_STATIC,138,136,8,8
+    LTEXT           "Z",IDC_STATIC,209,136,8,8
+    GROUPBOX        "Decimal for Pos",IDC_STATIC,7,222,236,24,BS_CENTER
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041203b5"
+        BEGIN
+            VALUE "CompanyName", "TODO: <회사 이름>"
+            VALUE "FileDescription", "TODO: <파일 설명>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "MapObjTool.exe"
+            VALUE "LegalCopyright", "TODO: (c) <회사 이름>.  All rights reserved."
+            VALUE "OriginalFilename", "MapObjTool.exe"
+            VALUE "ProductName", "TODO: <제품 이름>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x412, 949
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+
+    IDD_MYFORM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 287
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 331
+    END
+
+    IDD_MAPTOOL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 240
+    END
+
+    IDD_OBJECTTOOL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 262
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 258
+    END
+
+    IDD_NAVIMESHTOOL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 255
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 288
+    END
+
+    IDD_SPLATINGTOOL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 168
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 229
+    END
+
+    IDD_PATHFIND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 182
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 269
+    END
+
+    IDD_OCCLUSION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 262
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDP_OLE_INIT_FAILED     "OLE를 초기화할 수 없습니다. OLE 라이브러리 버전이 올바른지 확인하십시오."
+END
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "MapObjTool\n\nMapObjTool\n\n\nMapObjTool.Document\nMapObjTool.Document"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "MapObjTool"
+    AFX_IDS_IDLEMESSAGE     "준비"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "새 문서를 만듭니다.\n새로 만들기"
+    ID_FILE_OPEN            "기존 문서를 엽니다.\n열기"
+    ID_FILE_CLOSE           "활성 문서를 닫습니다.\n닫기"
+    ID_FILE_SAVE            "활성 문서를 저장합니다.\n저장"
+    ID_FILE_SAVE_AS         "활성 문서를 새 이름으로 저장합니다.\n다른 이름으로 저장"
+    ID_FILE_PAGE_SETUP      "인쇄 옵션을 변경합니다.\n페이지 설정"
+    ID_FILE_PRINT_SETUP     "프린터 및 인쇄 옵션을 변경합니다.\n인쇄 설정"
+    ID_FILE_PRINT           "활성 문서를 인쇄합니다.\n인쇄"
+    ID_FILE_PRINT_DIRECT    "현재 옵션을 사용하여 활성 문서를 인쇄합니다.\n빠른 인쇄"
+    ID_FILE_PRINT_PREVIEW   "전체 페이지를 표시합니다.\n인쇄 미리 보기"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "프로그램 정보, 버전 번호, 저작권을 표시합니다.\n정보"
+    ID_APP_EXIT             "문서를 저장할지를 묻고 응용 프로그램을 끝냅니다.\n끝내기"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE2       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE3       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE4       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE5       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE6       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE7       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE8       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE9       "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE10      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE11      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE12      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE13      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE14      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE15      "현재 문서를 엽니다."
+    ID_FILE_MRU_FILE16      "현재 문서를 엽니다."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "다음 창으로 전환합니다.\n다음 창"
+    ID_PREV_PANE            "이전 창으로 전환합니다.\n이전 창"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_SPLIT         "활성 창을 여러 개의 창으로 분할합니다.\n분할"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "선택 영역을 지웁니다.\n지우기"
+    ID_EDIT_CLEAR_ALL       "모두 지웁니다.\n모두 지우기"
+    ID_EDIT_COPY            "선택 영역을 복사하여 클립보드에 넣습니다.\n복사"
+    ID_EDIT_CUT             "선택 영역을 잘라내어 클립보드에 넣습니다.\n잘라내기"
+    ID_EDIT_FIND            "지정한 텍스트를 찾습니다.\n찾기"
+    ID_EDIT_PASTE           "클립보드 내용을 삽입합니다.\n붙여넣기"
+    ID_EDIT_REPEAT          "마지막 작업을 반복합니다.\n반복"
+    ID_EDIT_REPLACE         "특정 텍스트를 다른 텍스트로 바꿉니다.\n바꾸기"
+    ID_EDIT_SELECT_ALL      "전체 문서를 선택합니다.\n모두 선택"
+    ID_EDIT_UNDO            "마지막 작업 실행을 취소합니다.\n실행 취소"
+    ID_EDIT_REDO            "이전에 실행 취소된 작업을 다시 실행합니다.\n다시 실행"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_STATUS_BAR      "상태 표시줄을 표시하거나 숨깁니다.\n상태 표시줄 설정/해제"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "창 크기를 변경합니다."
+    AFX_IDS_SCMOVE          "창 위치를 변경합니다."
+    AFX_IDS_SCMINIMIZE      "창을 아이콘으로 축소합니다."
+    AFX_IDS_SCMAXIMIZE      "창을 전체 화면 크기로 확대합니다."
+    AFX_IDS_SCNEXTWINDOW    "다음 문서 창으로 전환합니다."
+    AFX_IDS_SCPREVWINDOW    "이전 문서 창으로 전환합니다."
+    AFX_IDS_SCCLOSE         "문서를 저장할 것인지 확인하고 활성 창을 닫습니다."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "창을 보통 크기로 복원합니다."
+    AFX_IDS_SCTASKLIST      "작업 목록을 활성화합니다."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "인쇄 미리 보기 모드를 닫습니다.\n미리 보기 취소"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_STATUS_PANE1        "창 1"
+    IDS_STATUS_PANE2        "창 2"
+    IDS_TOOLBAR_STANDARD    "표준"
+    IDS_TOOLBAR_CUSTOMIZE   "사용자 지정..."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_EDIT_MENU           "편집"
+END
+
+#endif    // 한국어 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_KOR)
+LANGUAGE 18, 1
+#pragma code_page(949)
+#include "res\MapObjTool.rc2"  // Microsoft Visual C++ 이외의 다른 도구에서 편집한 리소스입니다.
+#include "l.KOR\afxres.rc"          // 표준 구성 요소입니다.
+#include "l.KOR\afxprint.rc"        // 인쇄 미리 보기 리소스
+#if !defined(_AFXDLL)
+#include "l.KOR\afxribbon.rc"               // MFC 리본 및 컨트롤 막대 리소스
+#endif
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

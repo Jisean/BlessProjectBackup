@@ -1,0 +1,45 @@
+
+// 대기 상태
+0 - Idle_C
+1 - Idle_P_01
+2 - Idle_P_02
+
+
+3 - walk
+4 - Run
+
+// 공격
+5 - ATK_01
+6 - ATK_02
+
+
+// 스킬
+7 - SK_Firing_01
+
+
+// 피격
+8 - DMG_F
+9 - DMG_B
+
+
+// 넘어질때 연속동작
+10 - Down
+11 - Down_Loop
+12 - Get_Up
+
+
+// 떠오르는 공격을 받을 때 연속동작
+13 - Hit_Up
+14 - Hit_Loop
+15 - Hit_Down
+16 - Hit_Bounce
+
+17 - Stun
+
+18 - Die
+19 - Deadbody
+
+
+
+
+

@@ -1,0 +1,108 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Client", "01.Client", "{E8E99F21-0485-48CB-8328-1A6A6D251663}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Engine", "02.Engine", "{F15FB1E7-EEE7-4932-91BF-820361E68C7E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Client", "Client\Include\Client.vcproj", "{1291A208-907A-427C-8506-25D103039EB1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.System", "01.System", "{57D160B2-3962-4021-B1B6-629B0192DA45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Utility", "02.Utility", "{FAE13A98-002E-4707-8F84-748DEAFFA9DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03.Resource", "03.Resource", "{62B37225-211C-469F-A9A6-D8029F7E5204}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99.Headers", "99.Headers", "{A0BDF44E-4360-422B-9DB2-EACCE75A1EBB}"
+	ProjectSection(SolutionItems) = preProject
+		Engine\Headers\Engine_Enum.h = Engine\Headers\Engine_Enum.h
+		Engine\Headers\Engine_Function.h = Engine\Headers\Engine_Function.h
+		Engine\Headers\Engine_Functor.h = Engine\Headers\Engine_Functor.h
+		Engine\Headers\Engine_Include.h = Engine\Headers\Engine_Include.h
+		Engine\Headers\Engine_Macro.h = Engine\Headers\Engine_Macro.h
+		Engine\Headers\Engine_Struct.h = Engine\Headers\Engine_Struct.h
+		Engine\Headers\Engine_Typedef.h = Engine\Headers\Engine_Typedef.h
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "System", "Engine\System\Include\System.vcproj", "{F8CC7C1A-07BF-4FCE-B91B-0F87DDC894AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Export", "00.Export", "{9B303EFD-5F0F-4F9A-821C-764D5A369B95}"
+	ProjectSection(SolutionItems) = preProject
+		Engine\Export\Export_Function.h = Engine\Export\Export_Function.h
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Utility", "Engine\Utility\Include\Utility.vcproj", "{7F39BE41-A32E-48BB-AE69-6B70CB7FC8FE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Resources", "Engine\Resources\Include\Resources.vcproj", "{837B01B6-3D16-4E84-BC80-5A3F81EF1321}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04.SuperClass", "04.SuperClass", "{392B9C91-2026-474F-A29A-628A89B896F1}"
+	ProjectSection(SolutionItems) = preProject
+		SuperClass\Base.h = SuperClass\Base.h
+		SuperClass\Base.inl = SuperClass\Base.inl
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. ThirdParty", "01. ThirdParty", "{95AA7042-2BA0-4CE9-A4EB-4AAB8954CAF6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HashTable", "HashTable", "{CCA37866-5D18-4AC9-9DBC-A79A5E619C3C}"
+	ProjectSection(SolutionItems) = preProject
+		Reference\HashTable\Hash_Slot.h = Reference\HashTable\Hash_Slot.h
+		Reference\HashTable\Hash_Table.h = Reference\HashTable\Hash_Table.h
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Others", "00.Others", "{91FC2034-4EA4-4D60-8A2D-E36630701F85}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00. Document", "00. Document", "{32143702-61F5-4CB0-BC3A-CF5D02EB539B}"
+	ProjectSection(SolutionItems) = preProject
+		Document\ShaderControl.txt = Document\ShaderControl.txt
+		UI.txt = UI.txt
+		다이나믹카메라_원본.txt = 다이나믹카메라_원본.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Random", "Random", "{160C8C23-8128-499A-9EC1-CF39873F552E}"
+	ProjectSection(SolutionItems) = preProject
+		Reference\Random\Random_Number.h = Reference\Random\Random_Number.h
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1291A208-907A-427C-8506-25D103039EB1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1291A208-907A-427C-8506-25D103039EB1}.Debug|Win32.Build.0 = Debug|Win32
+		{1291A208-907A-427C-8506-25D103039EB1}.Release|Win32.ActiveCfg = Release|Win32
+		{1291A208-907A-427C-8506-25D103039EB1}.Release|Win32.Build.0 = Release|Win32
+		{F8CC7C1A-07BF-4FCE-B91B-0F87DDC894AE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F8CC7C1A-07BF-4FCE-B91B-0F87DDC894AE}.Debug|Win32.Build.0 = Debug|Win32
+		{F8CC7C1A-07BF-4FCE-B91B-0F87DDC894AE}.Release|Win32.ActiveCfg = Release|Win32
+		{F8CC7C1A-07BF-4FCE-B91B-0F87DDC894AE}.Release|Win32.Build.0 = Release|Win32
+		{7F39BE41-A32E-48BB-AE69-6B70CB7FC8FE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7F39BE41-A32E-48BB-AE69-6B70CB7FC8FE}.Debug|Win32.Build.0 = Debug|Win32
+		{7F39BE41-A32E-48BB-AE69-6B70CB7FC8FE}.Release|Win32.ActiveCfg = Release|Win32
+		{7F39BE41-A32E-48BB-AE69-6B70CB7FC8FE}.Release|Win32.Build.0 = Release|Win32
+		{837B01B6-3D16-4E84-BC80-5A3F81EF1321}.Debug|Win32.ActiveCfg = Debug|Win32
+		{837B01B6-3D16-4E84-BC80-5A3F81EF1321}.Debug|Win32.Build.0 = Debug|Win32
+		{837B01B6-3D16-4E84-BC80-5A3F81EF1321}.Release|Win32.ActiveCfg = Release|Win32
+		{837B01B6-3D16-4E84-BC80-5A3F81EF1321}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1291A208-907A-427C-8506-25D103039EB1} = {E8E99F21-0485-48CB-8328-1A6A6D251663}
+		{57D160B2-3962-4021-B1B6-629B0192DA45} = {F15FB1E7-EEE7-4932-91BF-820361E68C7E}
+		{FAE13A98-002E-4707-8F84-748DEAFFA9DC} = {F15FB1E7-EEE7-4932-91BF-820361E68C7E}
+		{62B37225-211C-469F-A9A6-D8029F7E5204} = {F15FB1E7-EEE7-4932-91BF-820361E68C7E}
+		{A0BDF44E-4360-422B-9DB2-EACCE75A1EBB} = {F15FB1E7-EEE7-4932-91BF-820361E68C7E}
+		{9B303EFD-5F0F-4F9A-821C-764D5A369B95} = {F15FB1E7-EEE7-4932-91BF-820361E68C7E}
+		{392B9C91-2026-474F-A29A-628A89B896F1} = {F15FB1E7-EEE7-4932-91BF-820361E68C7E}
+		{F8CC7C1A-07BF-4FCE-B91B-0F87DDC894AE} = {57D160B2-3962-4021-B1B6-629B0192DA45}
+		{7F39BE41-A32E-48BB-AE69-6B70CB7FC8FE} = {FAE13A98-002E-4707-8F84-748DEAFFA9DC}
+		{837B01B6-3D16-4E84-BC80-5A3F81EF1321} = {62B37225-211C-469F-A9A6-D8029F7E5204}
+		{95AA7042-2BA0-4CE9-A4EB-4AAB8954CAF6} = {91FC2034-4EA4-4D60-8A2D-E36630701F85}
+		{32143702-61F5-4CB0-BC3A-CF5D02EB539B} = {91FC2034-4EA4-4D60-8A2D-E36630701F85}
+		{CCA37866-5D18-4AC9-9DBC-A79A5E619C3C} = {95AA7042-2BA0-4CE9-A4EB-4AAB8954CAF6}
+		{160C8C23-8128-499A-9EC1-CF39873F552E} = {95AA7042-2BA0-4CE9-A4EB-4AAB8954CAF6}
+	EndGlobalSection
+EndGlobal

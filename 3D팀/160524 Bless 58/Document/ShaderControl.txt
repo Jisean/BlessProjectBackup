@@ -1,0 +1,30 @@
+// DOF
+float g_fFar;
+float g_fNear;
+
+
+// Radial
+float	g_BlurStart;			블러의 강도
+float	g_BlurWidth;			중점에 블러 안먹는 정도?
+
+float	g_CenterX;				중점X
+float	g_CenterY;				중점Y
+
+
+
+// HDR
+float g_fLightPower;
+
+
+// 스펙큘러 값주기
+스펙큘러 직접 주려면	(Shader_VTF 적용)
+
+1.	pEffect->SetFloat("g_fSpecMapping", 1.f);
+
+
+그러면 자동으로 빛의 세기와 범위가 설정된다.
+
+미세조정을 하고 싶으면
+
+pEffect->SetFloat("g_fSpecRange", 0.f);		범위 설정 값이 높을 수록 범위가 축소된다.
+pEffect->SetFloat("g_fSpecPow", 1.f);		파워 설정 값이 높을 수록 빛의 세기가 세진다.

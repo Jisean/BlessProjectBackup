@@ -1,0 +1,29 @@
+
+// 대기 상태
+0 - Idle_P_01
+1 - Idle_C
+
+2 - Walk
+3 - Run
+
+// 공격
+4 - ATK_01
+5 - ATK_02
+
+// 스킬
+6 - SK_01
+
+// 피격
+7 - DMG_F
+
+
+// 떠오르는 공격을 받을 때 연속동작
+8- Hit_Up
+9- Hit_Loop
+10- Hit_Down
+11- Hit_Bounce
+12 - Get_Up
+
+13- Stun
+
+14- Die

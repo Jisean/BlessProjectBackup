@@ -1,0 +1,35 @@
+Dmg
+
+1. 디바이스
+2. 타겟 몬스터의 Pos
+3. Dmg 값
+
+ex)
+Engine::CGameObject* pGameObject = CDmgView::Create(m_pDevice, &m_pInfo->m_vPos, 300);
+Engine::Get_Scene()->AddObject(LAYER_UI, L"Damage", pGameObject);
+
+
+몬스터 데미지
+Engine::CGameObject* pGameObject = CMonsterDmg::Create(m_pDevice, &m_pInfo->m_vPos, 300);
+Engine::Get_Scene()->AddObject(LAYER_UI, L"MonsterDamage", pGameObject);
+
+
+
+
+
+
+CastingBar
+
+1. 캐스팅 전체시간
+ex)
+((CCastingBar*)(Engine::Get_ObjList(LAYER_UI, L"CastingBar")->front()))->Set_CastTime(1.f);
+
+
+
+강제로 바를 지워야 할 때(플레이어 변경 등)
+ex)
+((CCastingBar*)(Engine::Get_ObjList(LAYER_UI, L"CastingBar")->front()))->Set_Render(false);
+
+
+
+
